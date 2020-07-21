@@ -1,26 +1,33 @@
 import React, { useState } from "react"
 import Layout from "../components/Layout"
 import { Container, Jumbotron, Main, H1, HeadImage } from "../components"
-import UnderConstruction from "../components/UnderConstruction"
 import blogIcon from "../static/assets/blog.svg"
 import Post from "./Post"
+import { useStaticQuery, graphql } from "gatsby"
 // import { useQueryParam } from "use-query-params";
 
 export default () => {
-  const [apiResponse, setApiResponse] = useState({ loading: true })
-  if (apiResponse.loading)
-    fetch("http://142.93.223.198:8080/api/getAllArticles/")
-      .then(data => data.json())
-      .then(response => {
-        setApiResponse({ loading: false, data: response.data })
-      })
-      .catch(error => {
-        setApiResponse({ loading: false, error: true })
-      })
+  const { allBlogs } = useStaticQuery(graphql`
+    query allBlogs {
+      allBlogs {
+        edges {
+          node {
+            blogs {
+              description
+              id
+              published_at
+              tag_list
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
+  const blogs = allBlogs.edges[0].node.blogs
 
   const renderMain = () => {
-    if (apiResponse.loading) return
-    return apiResponse.data.map(e => <Post {...e} />)
+    return blogs.map(e => <Post {...e} />)
   }
 
   return (
