@@ -2,21 +2,22 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import tags from "../../config/tags.json"
-const Post = ({ id, title, published_at, tag_list, description }) => (
+const Post = ({ id, title, published_at, tagList, description }) => (
   <Card>
     <PostHeading>{title}</PostHeading>
     <p>{description}</p>
     <div>
-      {tag_list.map(tag => {
-        const { bg_color_hex, text_color_hex } =
-          tags.filter(_tag => tag === _tag.name)[0] || {}
+      {tagList &&
+        tagList.map(tag => {
+          const { bg_color_hex, text_color_hex } =
+            tags.filter(_tag => tag === _tag.name)[0] || {}
 
-        return (
-          <Tag color={text_color_hex} bg_color={bg_color_hex}>
-            {tag}
-          </Tag>
-        )
-      })}
+          return (
+            <Tag color={text_color_hex} bg_color={bg_color_hex}>
+              {tag}
+            </Tag>
+          )
+        })}
     </div>
     <PostInfo>&#x1F4C6; {new Date(published_at).toDateString()}</PostInfo>
     <ContinueReadingBtn to={`/article/${id}`}>
