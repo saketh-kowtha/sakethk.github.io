@@ -3,24 +3,6 @@ import React from "react"
 import Post from "./Post"
 import Layout from "../components/Layout"
 
-export const query = graphql`
-  query BlogQuery {
-    allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            date
-            author
-            description
-            path
-            title
-          }
-        }
-      }
-    }
-  }
-`
-
 const Blog = ({ data }) => {
   return (
     <Layout>
