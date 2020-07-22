@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
-import { Container, Jumbotron, Main, H1, HeadImage } from "../components"
+import { Container, Main } from "../components"
 import notFound from "../static/assets/404.svg"
 import styled from "styled-components"
 

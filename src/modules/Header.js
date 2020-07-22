@@ -1,6 +1,7 @@
 import React from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import { Link } from "gatsby"
+import { up, down } from "styled-breakpoints"
 
 export default () => {
   const navLinks = [
@@ -12,39 +13,46 @@ export default () => {
   ]
   return (
     <Header>
-      <NavLeftSection>
+      <NavSection>
         <Title>Kowtha Saketh</Title>
-      </NavLeftSection>
-      <NavRightSection>
+      </NavSection>
+      <NavSection>
         {navLinks.map(({ label, path }) => (
           <NavLink activeStyle={{ color: "#0096cc" }} key={label} to={path}>
             {label}
           </NavLink>
         ))}
-      </NavRightSection>
+      </NavSection>
     </Header>
   )
 }
 
 const Header = styled.div`
+  ${up("sm")} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 `
 
-const NavLeftSection = styled.div`
+const NavSection = styled.div`
   padding: 0 20px;
-`
-
-const NavRightSection = styled.div`
-  padding: 0 20px;
+  ${down("sm")} {
+    padding: 0;
+  }
 `
 
 const NavLink = styled(Link)`
   color: #2e2e2e;
+  ${down("sm")} {
+    display: block;
+  }
   margin: 0 16px;
+  ${down("sm")} {
+    margin: 10px;
+  }
   font-weight: bold;
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -61,6 +69,8 @@ const Title = styled.h3`
   letter-spacing: 0.2em;
   color: #2e2e2e;
   margin: 16px;
-  :hover {
+  margin-right: 0;
+  ${down("sm")} {
+    margin: 10px;
   }
 `

@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import tags from "../../config/tags.json"
+import { down } from "styled-breakpoints"
 const Post = ({ id, title, published_at, tagList, description }) => (
   <Card>
     <PostHeading>{title}</PostHeading>
@@ -19,8 +20,13 @@ const Post = ({ id, title, published_at, tagList, description }) => (
           )
         })}
     </div>
-    <PostInfo>&#x1F4C6; {new Date(published_at).toDateString()}</PostInfo>
-    <ContinueReadingBtn to={`/article/${id}`}>
+    <PostInfo>
+      <span role="img" aria-label="date icon">
+        &#x1F4C6;
+      </span>{" "}
+      {new Date(published_at).toDateString()}
+    </PostInfo>
+    <ContinueReadingBtn to={`/articles/${id}`}>
       Continue Reading{" "}
     </ContinueReadingBtn>
   </Card>
@@ -32,6 +38,9 @@ const Card = styled.div`
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   padding: 16px 24px;
+  /* ${down("md")} {
+    padding: 16px 4px;
+  } */
   margin: 20px 0;
   border-radius: 12px;
   background-color: #f5f8fa;
@@ -47,7 +56,7 @@ const PostHeading = styled.h2`
 const PostInfo = styled.p`
   display: block;
   color: grey;
-  font-size: 12px;
+  font-size: 1.125rem;
 `
 
 const Tag = styled.span`
@@ -56,7 +65,7 @@ const Tag = styled.span`
   }
   padding: 6px;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 1.125rem;
   font-weight: 600;
   margin-right: 5px;
   background-color: ${props => props.bg_color || "transparent"};
@@ -66,5 +75,5 @@ const Tag = styled.span`
 const ContinueReadingBtn = styled(Link)`
   text-decoration: none;
   color: #0096cc;
-  font-size: 14px;
+  font-size: 0.875rem;
 `

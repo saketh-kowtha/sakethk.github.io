@@ -1,17 +1,28 @@
 import React from "react"
-import styled from "styled-components"
+import { ThemeProvider } from "styled-components"
 import Footer from "../modules/Footer"
 import Header from "../modules/Header"
 import GlobalStyle from "../commonStyles"
 
+const theme = {
+  breakpoints: {
+    sm: "576px",
+    md: "768px",
+    lg: "992px",
+    xl: "1200px",
+  },
+}
+
 const Layout = ({ children }) => {
   return (
-    <div>
-      <Header />
-      <GlobalStyle />
-      {children}
-      <Footer />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Header />
+        <GlobalStyle />
+        {children}
+        <Footer />
+      </div>
+    </ThemeProvider>
   )
 }
 

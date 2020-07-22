@@ -17,7 +17,7 @@ export default ({ title, text, more }) => {
 const Label = styled.label`
   font-weight: bold;
   color: #0096cc;
-  font-size: 18px;
+  font-size: 1.125rem;
   padding-bottom: 5px;
 `
 
@@ -25,7 +25,7 @@ const Text = styled.p`
   line-height: 1.6rem;
   letter-spacing: 0.05rem;
   padding-left: 1rem;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-align: left;
   color: grey;
 `
@@ -34,7 +34,7 @@ const MoreBtn = styled(Link)`
   text-decoration: none;
   font-weight: bold;
   color: grey;
-  font-size: 12px;
+  font-size: 0.75rem;
   display: block;
   margin-top: 10px;
   :after {

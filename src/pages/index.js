@@ -18,7 +18,11 @@ export default () => {
           <Text>
             Kowtha Saketh currently working as a UI Dev @Thoughtworks. He is
             Computer jock, Programmer, Technology enthusiast, Gamer, Blogger and
-            Math ❤️ er.
+            Math{" "}
+            <span role="img" aria-label="heart icon">
+              ❤️{" "}
+            </span>
+            er.
           </Text>
         </MainStyled>
       </Container>

@@ -1,7 +1,11 @@
 import styled from "styled-components"
+import { down } from "styled-breakpoints"
 
 const Main = styled.main`
   width: 50%;
+  ${down("md")} {
+    width: 85%;
+  }
   margin: 0 auto;
   padding: 20px;
   padding-bottom: 50px;

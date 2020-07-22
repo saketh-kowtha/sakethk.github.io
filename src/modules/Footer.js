@@ -13,7 +13,7 @@ export default () => {
 const Footer = styled.footer`
   position: absolute;
   color: grey;
-  font-size: 14px;
+  font-size: 0.875rem;
   background-color: white;
   padding: 10px;
   left: 0;

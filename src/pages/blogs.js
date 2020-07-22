@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../components/Layout"
 import { Container, Jumbotron, Main, H1, HeadImage } from "../components"
 import blogIcon from "../static/assets/blog.svg"
 import Post from "./Post"
 import { useStaticQuery, graphql } from "gatsby"
-// import { useQueryParam } from "use-query-params";
 
 export default () => {
   const { allBlogs } = useStaticQuery(graphql`
