@@ -50,17 +50,13 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     }
   `)
-  const blogsContent = []
   blogs.data.allBlogs.edges[0].node.blogs.forEach(async ({ id }) => {
     const blog = await getBlogbyId(id)
     const { data } = await blog.json()
-    blogsContent.push(data)
-  })
-  blogsContent.forEach(e => {
     createPage({
-      path: `/articles/${e.id}`,
+      path: `/articles/${id}`,
       component: path.resolve("./src/template/blog-template.js"),
-      context: { ...e },
+      context: { ...data },
     })
   })
 }
