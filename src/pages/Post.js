@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import tags from "../../config/tags.json"
-import { down } from "styled-breakpoints"
+import { up } from "styled-breakpoints"
 const Post = ({ id, title, published_at, tagList, description }) => (
   <Card>
     <PostHeading>{title}</PostHeading>
@@ -35,15 +35,15 @@ const Post = ({ id, title, published_at, tagList, description }) => (
 export default Post
 
 const Card = styled.div`
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  padding: 16px 24px;
-  /* ${down("md")} {
-    padding: 16px 4px;
-  } */
-  margin: 20px 0;
-  border-radius: 12px;
+  padding: 16px 8px;
+  ${up("md")} {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    padding: 16px 24px;
+  }
   background-color: #f5f8fa;
+  margin: 0 0 16px 0;
+  border-radius: 12px;
   :hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
@@ -55,8 +55,8 @@ const PostHeading = styled.h2`
 
 const PostInfo = styled.p`
   display: block;
+  font-size: 0.8rem;
   color: grey;
-  font-size: 1.125rem;
 `
 
 const Tag = styled.span`
@@ -65,7 +65,7 @@ const Tag = styled.span`
   }
   padding: 6px;
   border-radius: 5px;
-  font-size: 1.125rem;
+  font-size: 0.75rem;
   font-weight: 600;
   margin-right: 5px;
   background-color: ${props => props.bg_color || "transparent"};

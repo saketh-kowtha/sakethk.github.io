@@ -1,5 +1,5 @@
-import React from "react"
-import styled from "styled-components"
+import React, { useState } from "react"
+import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 import { up, down } from "styled-breakpoints"
 
@@ -11,12 +11,16 @@ export default () => {
     { label: "Projects", path: "/projects" },
     { label: "Videos", path: "/videos" },
   ]
+
+  const [toggle, setToggle] = useState(false)
+
   return (
     <Header>
-      <NavSection>
+      <NavSection desktop>
         <Title>Kowtha Saketh</Title>
       </NavSection>
-      <NavSection>
+      <Toggle onClick={() => setToggle(!toggle)}>OPEN</Toggle>
+      <NavSection toggle={toggle}>
         {navLinks.map(({ label, path }) => (
           <NavLink activeStyle={{ color: "#0096cc" }} key={label} to={path}>
             {label}
@@ -28,10 +32,15 @@ export default () => {
 }
 
 const Header = styled.div`
+  display: flex;
+  position: sticky;
+  top: 0;
   ${up("sm")} {
-    display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+  ${down("md")} {
+    flex-direction: column;
   }
   background-color: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
@@ -40,7 +49,17 @@ const Header = styled.div`
 const NavSection = styled.div`
   padding: 0 20px;
   ${down("sm")} {
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+
+    ${props =>
+      !props.toggle &&
+      !props.desktop &&
+      css`
+        display: none;
+      `}
     padding: 0;
+    transition: 0.5s;
   }
 `
 
@@ -72,5 +91,15 @@ const Title = styled.h3`
   margin-right: 0;
   ${down("sm")} {
     margin: 10px;
+  }
+`
+
+const Toggle = styled.span`
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  ${down("md")} {
+    display: block;
   }
 `
