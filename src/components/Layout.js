@@ -4,7 +4,7 @@ import Footer from "../modules/Footer"
 import Header from "../modules/Header"
 import GlobalStyle from "../commonStyles"
 
-const theme = {
+export const theme = {
   breakpoints: {
     sm: "576px",
     md: "768px",

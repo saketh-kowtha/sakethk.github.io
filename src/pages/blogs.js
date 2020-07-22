@@ -25,7 +25,7 @@ export default () => {
   `)
   const blogs = allBlogs.edges[0].node.blogs
   const renderMain = () => {
-    return blogs.map(e => <Post {...e} tagList={e.tag_list} />)
+    return blogs.map(e => <Post {...e} key={e.id} tagList={e.tag_list} />)
   }
 
   return (

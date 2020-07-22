@@ -1,35 +1,39 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 import tags from "../../config/tags.json"
 import { up } from "styled-breakpoints"
-const Post = ({ id, title, published_at, tagList, description }) => (
-  <Card>
-    <PostHeading>{title}</PostHeading>
-    <p>{description}</p>
-    <div>
-      {tagList &&
-        tagList.map(tag => {
-          const { bg_color_hex, text_color_hex } =
-            tags.filter(_tag => tag === _tag.name)[0] || {}
+import { theme } from "../components/Layout"
 
-          return (
-            <Tag color={text_color_hex} bg_color={bg_color_hex}>
-              {tag}
-            </Tag>
-          )
-        })}
-    </div>
-    <PostInfo>
-      <span role="img" aria-label="date icon">
-        &#x1F4C6;
-      </span>{" "}
-      {new Date(published_at).toDateString()}
-    </PostInfo>
-    <ContinueReadingBtn to={`/articles/${id}`}>
-      Continue Reading{" "}
-    </ContinueReadingBtn>
-  </Card>
+const Post = ({ id, title, published_at, tagList, description }) => (
+  <ThemeProvider theme={theme}>
+    <Card>
+      <PostHeading>{title}</PostHeading>
+      <p>{description}</p>
+      <div>
+        {tagList &&
+          tagList.map(tag => {
+            const { bg_color_hex, text_color_hex } =
+              tags.filter(_tag => tag === _tag.name)[0] || {}
+
+            return (
+              <Tag color={text_color_hex} bg_color={bg_color_hex}>
+                {tag}
+              </Tag>
+            )
+          })}
+      </div>
+      <PostInfo>
+        <span role="img" aria-label="date icon">
+          &#x1F4C6;
+        </span>{" "}
+        {new Date(published_at).toDateString()}
+      </PostInfo>
+      <ContinueReadingBtn to={`/articles/${id}`}>
+        Continue Reading{" "}
+      </ContinueReadingBtn>
+    </Card>
+  </ThemeProvider>
 )
 
 export default Post
