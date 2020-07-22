@@ -50,13 +50,18 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     }
   `)
-  blogs.data.allBlogs.edges[0].node.blogs.forEach(async ({ id }) => {
-    const blog = await getBlogbyId(id)
-    const { data } = await blog.json()
+
+  const creatNewPage = (id, data) =>
     createPage({
       path: `/articles/${id}`,
       component: path.resolve("./src/template/blog-template.js"),
       context: { ...data },
     })
-  })
+
+  for (let i = 0; i < blogs.data.allBlogs.edges[0].node.blogs.length; i++) {
+    const id = blogs.data.allBlogs.edges[0].node.blogs[i].id
+    const blog = await getBlogbyId(id)
+    const { data } = await blog.json()
+    creatNewPage(id, data)
+  }
 }
