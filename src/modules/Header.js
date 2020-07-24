@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 import { up, down } from "styled-breakpoints"
+import drawer from "../static/assets/drawer.png"
 
 export default () => {
   const navLinks = [
@@ -19,7 +20,9 @@ export default () => {
       <NavSection desktop>
         <Title>Kowtha Saketh</Title>
       </NavSection>
-      <Toggle onClick={() => setToggle(!toggle)}>OPEN</Toggle>
+      <Toggle onClick={() => setToggle(!toggle)}>
+        <img alt="drawer" style={{ width: "18px" }} src={drawer} />
+      </Toggle>
       <NavSection toggle={toggle}>
         {navLinks.map(({ label, path }) => (
           <NavLink activeStyle={{ color: "#0096cc" }} key={label} to={path}>
