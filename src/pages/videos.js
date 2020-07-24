@@ -6,6 +6,7 @@ import youtubeIcon from "../static/assets/youtube.svg"
 export default () => {
   return (
     <Layout>
+      <title>Videos</title>
       <Container>
         <Jumbotron>
           <HeadImage plain src={youtubeIcon} />

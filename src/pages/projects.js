@@ -59,6 +59,7 @@ const skills = {
 export default () => {
   return (
     <Layout>
+      <title>Projects</title>
       <Container>
         <Jumbotron>
           <HeadImage plain src={projectsIcon} />

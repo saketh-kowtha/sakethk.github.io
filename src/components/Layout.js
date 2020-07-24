@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components"
 import Footer from "../modules/Footer"
 import Header from "../modules/Header"
 import GlobalStyle from "../commonStyles"
+import SEO from "./seo"
 
 export const theme = {
   breakpoints: {
@@ -16,6 +17,7 @@ export const theme = {
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
+      <SEO />
       <div>
         <Header />
         <GlobalStyle />

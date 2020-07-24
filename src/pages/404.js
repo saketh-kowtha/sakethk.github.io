@@ -7,6 +7,7 @@ import styled from "styled-components"
 export default () => {
   return (
     <Layout>
+      <title>Not Found</title>
       <Container>
         <Main>
           <center>

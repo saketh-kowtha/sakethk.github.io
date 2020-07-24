@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import { Container, Jumbotron, Main, H1, HeadImage } from "../components"
 import blogIcon from "../static/assets/blog.svg"
-import Post from "./Post"
+import Post from "../components/Post"
 import { useStaticQuery, graphql } from "gatsby"
 
 export default () => {
@@ -30,6 +30,7 @@ export default () => {
 
   return (
     <Layout>
+      <title>Blogs</title>
       <Container>
         <Jumbotron>
           <HeadImage plain src={blogIcon} />

@@ -7,6 +7,7 @@ import MyImage from "../static/assets/me.jpeg"
 export default () => {
   return (
     <Layout>
+      <title>About Me</title>
       <Container>
         <Jumbotron>
           <HeadImage src={MyImage} />

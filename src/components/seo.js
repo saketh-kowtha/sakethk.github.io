@@ -57,7 +57,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: `Kowtha Saketh`,
         },
         {
           name: `twitter:title`,
@@ -74,8 +74,10 @@ function SEO({ description, lang, meta, title }) {
 
 SEO.defaultProps = {
   lang: `en`,
-  meta: [],
-  description: ``,
+  meta: ["saketh", "kowtha", "saketh kowtha", "kowtha saketh", "portfolio"],
+  description: `Kowtha Saketh portfolio and blogs`,
+  metaDescription: `Kowtha Saketh portfolio and blogs`,
+  title: `Kowtha Saketh`,
 }
 
 SEO.propTypes = {
