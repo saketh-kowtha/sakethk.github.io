@@ -32,8 +32,8 @@ function SEO({ description, lang, meta, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={title || ""}
+      titleTemplate={`%s`}
       meta={[
         {
           name: `description`,
@@ -77,7 +77,6 @@ SEO.defaultProps = {
   meta: ["saketh", "kowtha", "saketh kowtha", "kowtha saketh", "portfolio"],
   description: `Kowtha Saketh portfolio and blogs`,
   metaDescription: `Kowtha Saketh portfolio and blogs`,
-  title: `Kowtha Saketh`,
 }
 
 SEO.propTypes = {

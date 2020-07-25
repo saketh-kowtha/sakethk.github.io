@@ -7,7 +7,7 @@ const Main = styled.main`
   margin-bottom: 24px;
   padding: 20px;
   ${down("md")} {
-    width: 97%;
+    width: 90%;
     padding: 4px;
   }
   padding-bottom: 50px;

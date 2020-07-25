@@ -11,7 +11,12 @@ export default ({ pageContext }) => {
       <Main>
         <ContainerStyled>
           {pageContext.cover_image && (
-            <img alt="cover" src={pageContext.cover_image} />
+            <img
+              alt="cover"
+              width="100%"
+              height="100%"
+              src={pageContext.cover_image}
+            />
           )}
           <h3>{pageContext.title}</h3>
           <label>{pageContext.created_at}</label>
@@ -29,7 +34,8 @@ const ContainerStyled = styled(Container)`
   padding: 25px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   ${down("md")} {
-    padding: 16px;
+    padding: 8px;
+    box-shadow: none;
   }
   pre {
     padding: 10px;

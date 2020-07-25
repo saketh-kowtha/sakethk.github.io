@@ -4,6 +4,8 @@ import { Container, Jumbotron, Main, H1, HeadImage } from "../components"
 import blogIcon from "../static/assets/blog.svg"
 import Post from "../components/Post"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
+import { down } from "styled-breakpoints"
 
 export default () => {
   const { allBlogs } = useStaticQuery(graphql`
@@ -36,8 +38,14 @@ export default () => {
           <HeadImage plain src={blogIcon} />
           <H1>My Blogs</H1>
         </Jumbotron>
-        <Main>{renderMain()}</Main>
+        <StyledMain>{renderMain()}</StyledMain>
       </Container>
     </Layout>
   )
 }
+
+const StyledMain = styled(Main)`
+  ${down("md")} {
+    width: 98%;
+  }
+`

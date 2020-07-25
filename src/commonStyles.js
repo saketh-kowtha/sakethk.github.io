@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     min-height: 100%;
     ${down("md")}{
-      font-size: 12px;
+      font-size: 14px;
     }
 }
   body {

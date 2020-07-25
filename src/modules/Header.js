@@ -51,7 +51,7 @@ const Header = styled.div`
 
 const NavSection = styled.div`
   padding: 0 20px;
-  ${down("sm")} {
+  ${down("md")} {
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 
