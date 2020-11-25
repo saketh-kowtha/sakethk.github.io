@@ -66,7 +66,7 @@ export default () => {
           <H1>My Projects</H1>
         </Jumbotron>
         <Main>
-          {Object.keys(skills).map(e => (
+          {Object.keys(skills).reverse().map(e => (
             <DataCard
               key={e}
               more={skills[e].link && gitHubUrl + skills[e].link}
