@@ -11,19 +11,19 @@ export default () => {
       <Container>
         <Jumbotron>
           <HeadImage src={MyImage} />
-          <H1>Kowtha Saketh</H1>
+          <H1>
+            <GreyText>K</GreyText>owtha <GreyText>S</GreyText>aketh
+          </H1>
           <Label>Fullstack developer</Label>
         </Jumbotron>
         <MainStyled>
           <H2>About me</H2>
           <Text>
-            Kowtha Saketh currently working as a UI Dev @Thoughtworks. He is
-            Computer jock, Programmer, Technology enthusiast, Gamer, Blogger and
-            Math{" "}
-            <span role="img" aria-label="heart icon">
-              ❤️{" "}
-            </span>
-            er.
+            I am Javascript developer focuses on frontend technologies such as
+            HTML, CSS, React, Gatsby, Nextjs, Angular, Webpack, Parcel and
+            Redux, I have a passion for Design systems with Web accessibility,
+            Microfrontends and Serverless such as AWS and GCP. I had an
+            experience with Agile and TDD (Test driven development).
           </Text>
         </MainStyled>
       </Container>
@@ -41,6 +41,10 @@ const Label = styled.label`
 
 const MainStyled = styled(Main)`
   width: 40%;
+`
+
+const GreyText = styled.label`
+  color: hsla(202, 9%, 25%, 0.8);
 `
 
 const Text = styled.p`

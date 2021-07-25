@@ -7,10 +7,9 @@ import drawer from "../static/assets/drawer.png"
 export default () => {
   const navLinks = [
     { label: "About", path: "/" },
-    { label: "Blogs", path: "/blogs" },
     { label: "Skills", path: "/skills" },
+    { label: "Blogs", path: "https://articles.kowthasaketh.com" },
     { label: "Projects", path: "/projects" },
-    { label: "Videos", path: "/videos" },
   ]
 
   const [toggle, setToggle] = useState(false)
