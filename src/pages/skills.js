@@ -40,9 +40,43 @@ export default () => {
           <H1>My Skills</H1>
         </Jumbotron>
         <Main>
-          {Object.keys(skills).map(e => (
-            <DataCard title={e} text={skills[e]} />
-          ))}
+//           {Object.keys(skills).map(e => (
+//             <DataCard title={e} text={skills[e]} />
+//           ))}
+            <h2 data-sourcepos="7:1-7:18">Experienced in</h2>
+<ul data-sourcepos="8:1-22:7">
+    <li data-sourcepos="8:1-8:10">Reactjs</li>
+    <li data-sourcepos="9:1-9:9">Nodejs</li>
+    <li data-sourcepos="10:1-10:10">Express</li>
+    <li data-sourcepos="11:1-11:9">Nextjs</li>
+    <li data-sourcepos="12:1-12:9">Gatsby</li>
+    <li data-sourcepos="13:1-13:14">React-redux</li>
+    <li data-sourcepos="14:1-14:13">Javascript</li>
+    <li data-sourcepos="15:1-15:9">Jquery</li>
+    <li data-sourcepos="16:1-16:10">Ramdajs</li>
+    <li data-sourcepos="17:1-17:9">Python</li>
+    <li data-sourcepos="18:1-18:7">Dart</li>
+    <li data-sourcepos="19:1-19:10">Mongodb</li>
+    <li data-sourcepos="20:1-20:9">Docker</li>
+    <li data-sourcepos="21:1-21:5">K8</li>
+    <li data-sourcepos="22:1-22:7">Jest</li>
+</ul>
+<h2 data-sourcepos="24:1-24:21">I'm Interested in</h2>
+<ul data-sourcepos="25:1-31:6">
+    <li data-sourcepos="25:1-25:43">Lambda Calculus and Discrete Mathematics</li>
+    <li data-sourcepos="26:1-26:13">Algorithms</li>
+    <li data-sourcepos="27:1-27:25">Functional programming</li>
+    <li data-sourcepos="28:1-28:66">Javascript (Node, Angularjs, React ...) / Functional Javascript</li>
+    <li data-sourcepos="29:1-29:8">Scala</li>
+    <li data-sourcepos="30:1-30:9">Python</li>
+    <li data-sourcepos="31:1-31:6">K8s</li>
+</ul>
+<h2 data-sourcepos="33:1-33:25">Things I find amusing</h2>
+<ul data-sourcepos="35:1-37:19">
+    <li data-sourcepos="35:1-35:55">Learning New Technologies and Programming languages.</li>
+    <li data-sourcepos="36:1-36:33">Browsing open source projects.</li>
+    <li data-sourcepos="37:1-37:19">Surfing the Web.</li>
+</ul>
         </Main>
       </Container>
     </Layout>
