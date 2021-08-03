@@ -1,9 +1,9 @@
 module.exports = {
   pathPrefix: "/sakethk.github.io",
   siteMetadata: {
-    title: `Kowtha Saketh`,
-    description: `Kowtha Saketh Personal portfolio site`,
-    author: `Kowtha Saketh`,
+    title: `Saketh Kowtha`,
+    description: `Saketh Kowtha Personal portfolio site`,
+    author: `Saketh Kowtha`,
   },
   plugins: [
     "gatsby-plugin-styled-components",
@@ -19,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "KOWTHA SAKETH",
-        short_name: "Kowtha Saketh",
+        name: "SAKETH KOWTHA",
+        short_name: "Saketh Kowtha",
         start_url: "/",
         background_color: "#6b37bf",
         theme_color: "#6b37bf",
