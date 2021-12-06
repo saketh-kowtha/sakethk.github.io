@@ -7,7 +7,7 @@ export default () => {
   const socialLinks = [
     {
       name: "Twitter",
-      href: "https://twitter.com/saketh_kowtha",
+      href: "https://twitter.com/sakethkowtha",
     },
     {
       name: "Github",
