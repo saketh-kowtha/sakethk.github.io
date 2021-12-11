@@ -8,7 +8,7 @@ export default () => {
   const navLinks = [
     { label: "About", path: "/" },
     { label: "Skills", path: "/skills" },
-    { label: "Blogs", path: "https://articles.kowthasaketh.com" },
+    { label: "Blogs", path: "https://blogs.kowthasaketh.com/" },
     { label: "Projects", path: "/projects" },
   ]
 
