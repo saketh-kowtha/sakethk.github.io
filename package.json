@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "gatsby-plugin-use-query-params": "^1.0.1",
-    "gatsby-transformer-remark": "^2.8.25",
+    "gatsby-transformer-remark": "^5.25.1",
     "prettier": "2.0.5",
     "styled-breakpoints": "^8.1.1",
     "use-query-params": "^1.1.6"
